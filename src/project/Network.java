@@ -36,7 +36,7 @@ public class Network {
 
 
     public double[] getOutput(double[] input){
-        return calculator.getOutput();
+        return calculator.getOutput(input);
     }
 
     public double[][] getInputs() {
