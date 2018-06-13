@@ -4,10 +4,12 @@ public class Neuron{
     private double[] weights;
     private double step;
     private double lambda;
+    private double neuronError;
 
     public Neuron(int count, double lambda){
         init(count);
         this.lambda = lambda;
+        neuronError = 0;
     }
 
     private void init(int count){
@@ -62,5 +64,13 @@ public class Neuron{
 
     public void setLambda(double lambda) {
         this.lambda = lambda;
+    }
+
+    public double getNeuronError() {
+        return neuronError;
+    }
+
+    public void setNeuronError(double neuronError) {
+        this.neuronError = neuronError;
     }
 }

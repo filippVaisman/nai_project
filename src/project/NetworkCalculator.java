@@ -26,6 +26,19 @@ public class NetworkCalculator {
         return outerLayerOutput;
     }
 
+    public void setError(){
+        setErrorOnOutputLayer();
+        setErrorIOnHiddenLayer();
+    }
+
+    private void setErrorIOnHiddenLayer(){
+
+    }
+
+    private void setErrorOnOutputLayer(){
+
+    }
+
 
 
 }
