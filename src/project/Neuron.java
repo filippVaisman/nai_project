@@ -31,7 +31,11 @@ public class Neuron{
         return net;
     }
 
-    private double activate(double input){
-        return (1 /(1 + Math.pow(Math.E, ((-1) * lambda * input))));
+    private double activate(double net){
+        return (1 /(1 + Math.pow(Math.E, ((-1) * lambda * net))));
+    }
+
+    public double getOutput(double[] input){
+        return activate(calculateNet(input));
     }
 }
