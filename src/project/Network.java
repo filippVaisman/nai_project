@@ -9,7 +9,7 @@ public class Network {
     private double lambda;
     private int hiddenInputs;
 
-    
+
     public Network(int hiddenLayerCount, int outerLayerCount, double lambda, int hiddenInputs) {
         this.hiddenLayer = new Neuron[hiddenLayerCount];
         this.outerLayer = new Neuron[outerLayerCount];
