@@ -14,13 +14,31 @@ public class Network {
         this.hiddenLayer = new Neuron[hiddenLayerCount];
         this.outerLayer = new Neuron[outerLayerCount];
         this.lambda = lambda;
+        initNetwork();
     }
 
     private void getInputData() {
         //read from file input data
     }
 
-    private void initNetwork() {
+    private void initNetwork(){
+        for(int i = 0; i < hiddenLayer.length; i++){
+            hiddenLayer[i] = new Neuron(hiddenInputs, lambda);
+        }
+        for(int i = 0; i < outerLayer.length; i++){
+            outerLayer[i] = new Neuron(hiddenLayer.length, lambda);
+        }
+    }
+    public double[] getOutput(double[] input){
+        double[] hiddenLayerOutput = new double[hiddenLayer.length];
+        double[] outerLayerOutput = new double[outerLayer.length];
+        for(int i = 0; i < hiddenLayer.length; i++){
+            hiddenLayerOutput[i] = hiddenLayer[i].getOutput(input);
+        }
+        for(int i = 0; i < outerLayer.length; i++){
+             outerLayerOutput[i] = outerLayer[i].getOutput(hiddenLayerOutput);
+        }
+        return outerLayerOutput;
     }
 }
 
