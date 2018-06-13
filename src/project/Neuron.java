@@ -4,6 +4,7 @@ public class Neuron{
     private double[] weights;
     private double step;
     private double lambda;
+
     public Neuron(int count, double lambda){
         init(count);
         this.lambda = lambda;
